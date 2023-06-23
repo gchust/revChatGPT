@@ -392,7 +392,7 @@ class Chatbot:
         cid, pid = data["conversation_id"], data["parent_message_id"]
         message = ""
 
-        if data.get("model", "") === "gpt-4":
+        if data.get("model", "") == "gpt-4":
             data["arkose_token"] = self.__arkose_token()
 
         self.conversation_id_prev_queue.append(cid)
@@ -982,7 +982,7 @@ class AsyncChatbot(Chatbot):
 
         cid, pid = data["conversation_id"], data["parent_message_id"]
         message = ""
-        if data.get("model", "") === "gpt-4":
+        if data.get("model", "") == "gpt-4":
             data["arkose_token"] = await self.__arkose_token()
         self.conversation_id_prev_queue.append(cid)
         self.parent_id_prev_queue.append(pid)
